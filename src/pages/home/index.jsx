@@ -1,10 +1,12 @@
 import HomePageSlider from '@/components/HomepageSlider'
+import axios from 'axios';
 import React from 'react'
 
-export default function index() {
+export default function index({data}) {
+    
     return (
         <>
-            <HomePageSlider />
+            <HomePageSlider images={data}/>
             <main className="container mx-auto mt-8 space-y-6">
                 <div className="bg-white p-8 rounded shadow-md">
                     <h1 className="text-3xl font-semibold mb-4">Welcome to Our Website</h1>
@@ -28,4 +30,16 @@ export default function index() {
         </>
 
     )
+}
+
+
+  export async function getStaticProps() {
+    const res = await axios.get('http://127.0.01:1337/api/sliders?populate=%2A');
+    const data = res?.data?.data[0]?.attributes?.Images?.data;
+     
+    return {
+        props: {
+            data,
+        }
+    };
 }

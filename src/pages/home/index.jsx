@@ -9,7 +9,7 @@ export default function index() {
                 <div className="bg-white p-8 rounded shadow-md">
                     <h1 className="text-3xl font-semibold mb-4">Welcome to Our Website</h1>
                     <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac velit nec dolor fermentum laoreet ut id tellus.</p>
-                    <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Learn More</button>
+                    <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Learn More ...</button>
                 </div>
                 <div className="bg-white p-8 rounded shadow-md">
                     <p>

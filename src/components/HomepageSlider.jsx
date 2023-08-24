@@ -10,7 +10,7 @@ import image3 from "@/assets/image3.jpg"
 
 export default function HomePageSlider({ images }) {
 
-    const api_url = "http://localhost:1337"
+    const api_url = "http://3.110.104.211:1337"
 
     const settings = {
         dots: true,
@@ -19,13 +19,13 @@ export default function HomePageSlider({ images }) {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
-
+    console.log(images)
     return (
         <div className="slider-container">
             <Slider {...settings}>
                 {images.map((image, index) => (
                     <div key={index} className="slide">
-                        <Image src={api_url + image?.attributes?.formats?.large?.url} width={1600} height={600}  className='m-auto' alt={`Slide ${index}`} />
+                        <Image src={api_url + image?.attributes?.formats?.small?.url} width={1600} height={600} className='m-auto' alt={`Slide ${index}`} />
                     </div>
                 ))}
             </Slider>

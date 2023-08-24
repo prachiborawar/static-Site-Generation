@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 export default function UserDetail({ data }) {
-    const api_url = "http://localhost:1337"
+    const api_url = "http://3.110.104.211:1337"
     return (
         <div className="container mx-auto mt-8 space-y-6">
             <div className="bg-white p-8 rounded shadow-md flex space-x-10 ">
@@ -39,7 +39,7 @@ export default function UserDetail({ data }) {
 }
 
 export const getStaticPaths = async () => {
-    const response = await axios.get('http://127.0.01:1337/api/people');
+    const response = await axios.get('http://3.110.104.211:1337/api/people');
     const posts = response?.data?.data;
     const paths = posts.map((post) => ({
         params: {
@@ -55,7 +55,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-    const response = await axios.get(`http://127.0.01:1337/api/people/${params.id}?populate=%2A`);
+    const response = await axios.get(`http://3.110.104.211:1337/api/people/${params.id}?populate=%2A`);
     const data = response?.data?.data;
     return {
         props: {

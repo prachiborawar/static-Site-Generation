@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 export default function Users({ data }) {
-  const api_url = "http://localhost:1337"
+  const api_url = "http://3.110.104.211:1337"
   const router = useRouter();
   return (
     <div className="container mx-auto mt-8 space-y-6">
@@ -31,7 +31,7 @@ export default function Users({ data }) {
 export const getStaticProps = async () => {
   try {
     // Fetch data using Axios
-    const response = await axios.get('http://127.0.01:1337/api/people?populate=%2A');
+    const response = await axios.get('http://3.110.104.211:1337/api/people?populate=%2A');
     const data = response?.data?.data;
     // Return the data as props
     return {

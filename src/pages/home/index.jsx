@@ -34,7 +34,7 @@ export default function index({data}) {
 
 
   export async function getStaticProps() {
-    const res = await axios.get('http://127.0.01:1337/api/sliders?populate=%2A');
+    const res = await axios.get('http://3.110.104.211:1337/api/sliders?populate=%2A');
     const data = res?.data?.data[0]?.attributes?.Images?.data;
      
     return {
